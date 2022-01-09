@@ -27,16 +27,16 @@ navigator.mediaDevices.getUserMedia({
         //If enter is pressed
         if(e.which == 13 && message.val().length !== 0) {
             //Sending a the value of the input
-            socket.emit('message', message.val());
+            socket.emit('message', message.val(), myID);
             //Clear the input
             message.val('');
         }
     });
     
 
-    socket.on('createMessage', message => {
+    socket.on('createMessage', (message, name) => {
         //Append a message to the view
-        $('.messages').append(`<li class="message"><b>${myID}</b><br/>${message}</li>`);
+        $('.messages').append(`<li class="message"><b>${name}</b><br/>${message}</li>`);
         scrollToBottom();
     })
 

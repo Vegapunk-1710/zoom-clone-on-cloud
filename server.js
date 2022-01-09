@@ -31,8 +31,8 @@ io.on('connection', socket => {
         //socket.io notify the server about the new user joining in
         socket.broadcast.to(roomId).emit('user-connected', userId);
         //socket.io listens if a message got sent to the chat
-        socket.on('message', message => {
-            io.to(roomId).emit('createMessage', message);
+        socket.on('message', (message, name) => {
+            io.to(roomId).emit('createMessage', message, name);
         })
     });
 })

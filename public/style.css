@@ -3,9 +3,11 @@ body{
     padding:0;
 }
 
+
 #video-grid {
     display: flex;
-    justify-content: center;
+    overflow-y: auto;
+    overflow-x: auto;
 }
 
 video {
