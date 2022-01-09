@@ -2,7 +2,7 @@ let myID = prompt("Please enter your name");
 const socket = io('/');
 const videoGrid = document.getElementById('video-grid')
 const myVideo = document.createElement('video');
-myVideo.muted = false;
+myVideo.muted = true;
 //Init PeerJS
 var peer = new Peer(undefined, {
     path: '/peerjs',
