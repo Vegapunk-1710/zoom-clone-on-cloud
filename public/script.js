@@ -54,26 +54,22 @@ navigator.mediaDevices.getUserMedia({
         connectToNewUser(userId, stream);
     })
 
-
-    peer.on('open', id => {
-        //Give an ID to the user when they join
-        socket.emit('join-room', ROOM_ID, id);
-    })
-
-    const connectToNewUser = (userId, stream) => {
-        //Prepare to give away our stream
-        const call = peer.call(userId, stream);
-        const video = document.createElement('video');
-        //Calling the new user
-        call.on('stream', userVideoStream => {
-            addVideoStream(video, userVideoStream);
-        })
-}
-
-
 })
 
+peer.on('open', id => {
+    //Give an ID to the user when they join
+    socket.emit('join-room', ROOM_ID, id);
+})
 
+const connectToNewUser = (userId, stream) => {
+    //Prepare to give away our stream
+    const call = peer.call(userId, stream);
+    const video = document.createElement('video');
+    //Calling the new user
+    call.on('stream', userVideoStream => {
+        addVideoStream(video, userVideoStream);
+    })
+}
 
 const addVideoStream = (video, stream) => {
     //Links the stream to the <div/> int the view and starts it
