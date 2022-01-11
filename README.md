@@ -1,4 +1,4 @@
-# Cloud-Zoom-Clone
+# Zoom Clone on the Cloud
 
 A cloud clone of Zoom using ExpressJS, PeerJS, Socket.IO and Heroku
 
