@@ -24,7 +24,6 @@ Since the application uses a free solution for the peer-to-peer calls, connectio
 
 3 - Stay in the room and the others could try closing and re-opening the page.
 
-Usually connection happens within a couple of minutes...It's unfortunate but it's beyond my control :(
 
 ## Screenshots of the application
 
